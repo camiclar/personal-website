@@ -1,0 +1,790 @@
+/* UTILITIES */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+#tag {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 25px;
+    height: 25px;
+    background-color: #CC0000;
+    z-index: 99999;
+}
+
+:root {
+    --blue-gray: #1F3E50;
+    --teal-gray: #77ACA2;
+    --light-teal-gray: #a6c9c4;
+    --dark-teal-gray: #1B7967;
+    --maroon: #821B3F;
+    --light-maroon: #f5ccda;
+    --peach: #CE796B;
+    --yellow: #F0CF65;
+    --black: #0B171D;
+    --white: #F0F6F9;
+    --light-gray: #d6e4e9;
+    --dark-gray: #304C55;
+}
+
+/* For side nav */
+.mobile-only {
+    visibility: visible;
+}
+
+.widescreen-only {
+    visibility: hidden;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* 
+    GENERAL
+*/
+body {
+    margin: 0;
+    background-color: var(--white);
+    line-height: 1.5;
+}
+
+/* 
+    TYPOGRAPHY
+*/
+p,
+a,
+li,
+td,
+figcaption {
+    font-family: "Roboto", sans-serif;
+    color: var(--black);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Roboto Slab", serif;
+    color: var(--black);
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 700;
+    padding: 0.25em 0 0.5em;
+    color: var(--blue-gray);
+    margin-bottom: 0;
+    padding-bottom: 0.2em;
+}
+
+#about h1 {
+    padding-bottom: 0.5em;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: 700;
+    padding: 0.25em 0 0.5em;
+    color: var(--blue-gray);
+}
+
+#project h2 {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.results-header {
+    padding-top: 1em;
+}
+
+h3 {
+    margin-bottom: 0.25em;
+}
+
+#project h3 {
+    margin: 0.75em 0 0.25em;
+}
+
+p,
+li {
+    font-size: 18px;
+}
+
+#project p {
+    margin: 0.5em 0 0;
+}
+
+/*
+    MOBILE NAVIGATION
+*/
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 500,
+        'GRAD' 0,
+        'opsz' 48
+}
+
+.openbtn {
+    position: fixed;
+    right: 20px;
+    top: 10px;
+    color: var(--black);
+    font-family: 'Roboto', sans-serif;
+    z-index: 1000;
+
+}
+
+.openbtn:hover {
+    color: var(--dark-teal-gray);
+}
+
+/* 
+Hides chevron for non-dropdown menu items
+Credit: https://forum.bootstrapstudio.io/t/removing-up-down-default-arrows-on-accordion-items/8815
+*/
+.no-chevron::after {
+    background-image: initial;
+}
+
+.no-chevron:not(.collapsed)::after {
+    background-image: initial;
+}
+
+.menu-button {
+    font-size: 36px !important;
+    position: relative;
+    top: 6px;
+    left: -4px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+/* The side navigation menu */
+.all-over-bkg {
+    display: none;
+}
+
+.is-visible {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 9999;
+    display: block;
+}
+
+#mySidenav {
+    z-index: 10000;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+    background-color: var(--white);
+}
+
+/* The navigation menu links */
+.sidenav a,
+.accordion-button {
+    text-decoration: none;
+    font-size: 24px;
+    color: var(--dark-gray);
+    transition: 0.3s;
+    font-family: "Roboto", sans-serif;
+    background-color: var(--white);
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.accordion-header {
+    background-color: var(--white);
+    padding: 0;
+}
+
+.accordion-body {
+    background-color: var(--white);
+    padding: 0;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--light-gray);
+    color: var(--black);
+}
+
+.mobile-dropdown a {
+    display: block;
+    font-size: 20px;
+    padding: 0.5em 0.5em 0.5em 1.5em;
+    border-bottom: 2px solid var(--light-gray);
+}
+
+.active,
+.active a {
+    background-color: var(--dark-teal-gray);
+    color: var(--white) !important;
+}
+
+/*
+    WIDESCREEN NAVIGATION
+*/
+
+.widescreen-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--white);
+    padding: 1.2rem 2rem;
+    border-bottom: 2px solid var(--light-gray);
+    z-index: 1000;
+}
+
+.widescreen-nav>ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1.0rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-items {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 2rem;
+    font-size: 20px;
+    text-decoration: none !important;
+}
+
+.logo {
+    font-size: 36px;
+    color: var(--maroon);
+}
+
+.nav-items li {
+    font-size: 20px;
+}
+
+.nav-float,
+.nav-float li {
+    text-decoration: none;
+    padding: 0.3em;
+    border-radius: 0.5em;
+}
+
+/*  
+    Dropdown for widescreen menu
+    Credit: https://www.w3schools.com/css/css_dropdowns.asp 
+*/
+.dropbtn {
+    background-color: var(--light-teal-gray);
+    color: var(--black);
+    padding: 0.5em 0.75em;
+    border-radius: 0.5em;
+    border: 3px solid var(--black);
+    cursor: pointer;
+    box-shadow: 8px 8px var(--black);
+    font-weight: 700;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--white);
+    min-width: 260px;
+    box-shadow: 8px 8px var(--black);
+    border: 3px solid var(--black);
+    border-radius: 0.5em;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: var(--black);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-radius: 0.5em;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--light-teal-gray);
+    transition: 0.3s;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: var(--dark-teal-gray);
+    color: var(--white);
+}
+
+.widescreen-active {
+    font-weight: bold;
+}
+
+
+/*
+    HEADER
+*/
+
+/* H1 shadow effects credit: https://kinsta.com/blog/css-text-outline/ */
+#home header h1 {
+    color: var(--maroon);
+    text-shadow: 2px 2px var(--black);
+    -webkit-text-stroke: 1px var(--black);
+    font-size: 64px;
+    padding-bottom: 0.25em;
+    line-height: 1.1;
+}
+
+header {
+    margin: 5em 1.25em 2em;
+    text-align: center;
+}
+
+#project header {
+    text-align: left;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+#project .subhead {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--dark-gray);
+}
+
+header ul li {
+    font-size: 21px;
+    padding-bottom: 0.5em;
+    color: var(--blue-gray);
+}
+
+.project-summary {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.project-bullets {
+    padding-left: 1.5em;
+    position: relative;
+}
+
+.project-bullets-narrow {
+    padding-left: 1em;
+}
+
+.project-bullets li::before {
+    content: "•";
+    color: var(--maroon);
+    font-weight: bold;
+    position: relative;
+    left: -0.2em;
+    top: 2px;
+    font-size: 28px;
+}
+
+main .project-bullets li::before {
+    font-size: 24px;
+}
+
+/* MAIN */
+main {
+    background-color: var(--light-gray);
+    padding: 2em;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+#about main {
+    padding: 5em 1.25em 2em;
+}
+
+#project main {
+    text-align: left;
+    align-items: flex-start;
+    padding: 2em 1.5em;
+}
+
+.project-preview {
+    display: flex;
+    flex-flow: row wrap;
+    text-align: left;
+    justify-content: center;
+    background-color: var(--white);
+    box-shadow: 8px 8px var(--black);
+    border-radius: 0.5em;
+    border: 3px solid var(--black);
+    padding: 1.5em;
+    margin-bottom: 2em;
+    max-width: 1000px;
+
+}
+
+.project-role {
+    color: var(--dark-gray);
+    font-weight: 700;
+    font-size: 18px;
+}
+
+#about .container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.feedback-form {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 2em;
+}
+
+.demographics,
+.usage {
+    display: flex;
+    flex-flow: row wrap;
+    padding-bottom: 0.75em;
+    gap: 0.5em;
+}
+
+.results h2 {
+    padding-top: 1em;
+}
+
+.results h2,
+.results h3 {
+    text-align: center;
+}
+
+.results-wrapper {
+    background-color: var(--white);
+    padding: 0.75em 2em 2em;
+    margin: 2.5em auto;
+    box-shadow: 8px 8px var(--black);
+    border-radius: 0.5em;
+    border: 3px solid var(--black);
+    max-width: 1000px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    flex-flow: column wrap;
+    text-align: center;
+    width: 100%;
+    padding-bottom: 1.25em;
+}
+
+.rating-info {
+    font-size: 20px;
+}
+
+.sentiment-lists {
+    display: flex;
+    flex-flow: row wrap;
+    font-size: 20px;
+    width: 100%;
+    gap: 0.5em;
+}
+
+/* 
+    FOOTER
+*/
+
+footer {
+    padding: 2em 2em 5em;
+    text-align: center;
+    background-color: var(--maroon);
+}
+
+footer h2,
+footer a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+footer a {
+    padding-right: 0.25em;
+    font-size: 20px;
+}
+
+footer a:hover {
+    color: var(--light-gray);
+}
+
+/*
+    BUTTONS AND LINKS
+*/
+a {
+    text-decoration: none;
+}
+
+.button {
+    background-color: var(--maroon);
+    border-radius: 0.5em;
+    box-shadow: 6px 6px var(--black);
+    border: 3px solid var(--black);
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+} 
+
+.button:hover {
+    background-color: var(--light-maroon);
+}
+
+.button a {
+    color: var(--white);
+    display: block;
+    padding: 0.75em 1em;
+}
+
+.button a:hover {
+    color: var(--maroon);
+}
+
+.project-button {
+    margin: 2em auto 0;
+    font-size: 20px;
+}
+
+.project-button a {
+    padding: 1em 2.75em;
+}
+
+/* 
+    IMAGES
+*/
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.headshot {
+    max-width: 400px;
+    border-radius: 0.5em;
+    border: 3px solid var(--black);
+    box-shadow: 6px 6px var(--black);
+    margin-bottom: 1em;
+}
+
+.project-preview img {
+    max-width: 90%;
+    border-radius: 0.5em;
+    box-shadow: 8px 8px var(--black);
+    border: 3px solid var(--black);
+    margin-bottom: 1.5em;
+    width: auto;
+    height: auto;
+
+}
+
+#project img {
+    border-radius: 0.5em;
+    box-shadow: 8px 8px var(--black);
+    border: 3px solid var(--black);
+    margin-bottom: 1em;
+}
+
+/*
+    MEDIA QUERIES
+*/
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+    #tag {
+        background-color: #FF9900;
+    }
+
+    .mobile-only {
+        visibility: hidden;
+    }
+
+    .widescreen-only {
+        visibility: visible;
+    }
+
+    header {
+        margin: 7.5em 3em 3em;
+        text-align: left;
+    }
+
+    #home header h1 {
+        text-shadow: 2px 2px var(--black);
+        font-size: 84px;
+        padding-bottom: 0.15em;
+    }
+
+    .project-preview {
+        flex-flow: row-reverse nowrap;
+        align-items: center;
+        gap: 2em;
+
+    }
+
+    .project-preview img {
+        max-width: 50%;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+
+    #about main {
+        padding: 7.5em 3em 3em;
+        align-items: flex-start;
+    }
+
+
+    #about .container {
+        flex-flow: row nowrap;
+        align-items: flex-start;
+        text-align: left;
+        gap: 2em;
+    }
+
+    .headshot {
+        /* max-height: 450px; */
+        width: auto;
+    }
+
+    .feedback-form {
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    #project main {
+        padding: 3em;
+    }
+
+    #project img {
+        max-width: 500px;
+    }
+
+    .results {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    #project .results-header {
+        /* align-self: center; */
+        padding-bottom: 0.5em;
+
+    }
+
+    .demographics,
+    .usage {
+        gap: 2em;
+        align-items: center;
+    }
+
+    .demographics {
+        flex-flow: row nowrap;
+        padding-bottom: 2em;
+    }
+
+    .usage {
+        flex-flow: row-reverse nowrap;
+    }
+
+    .results p {
+        max-width: 300px;
+    }
+
+    .sentiment-lists {
+        justify-content: space-around;
+    }
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+    #tag {
+        background-color: #00AA88;
+    }
+
+    header {
+        margin: 7.5em 5em 3em;
+    }
+
+    #home header h1 {
+        text-shadow: 3px 3px var(--black);
+        font-size: 96px;
+    }
+
+    .project-summary {
+        flex-flow: row nowrap;
+        gap: 1.5em;
+    }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+    #tag {
+        background-color: #674EA7;
+    }
+
+
+}

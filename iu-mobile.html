@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IU Mobile User Feedback - Camilla Clark</title>
+
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
+    <!-- Google Fonts - make sure you select both normal and bold styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Itim&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Google Icons -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/hover.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body id="project">
+    <!-- OPTIONAL VISUAL INDICATOR FOR BREAK POINTS -->
+    <!-- <div id="tag"></div> -->
+
+    <!-- NAVIGATION -->
+    <div class="mobile-only">
+        <nav id="mySidenav" class="sidenav">
+            <a class="closebtn">&times;</a>
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed no-chevron" type="button">
+                            <a href="index.html">
+                                Home
+                            </a>
+                        </button>
+                    </h2>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#projects-collapse" aria-expanded="true" aria-controls="projects-collapse">
+                            Projects
+                        </button>
+                    </h2>
+                    <div id="projects-collapse" class="accordion-collapse collapse show"
+                        data-bs-parent="#projects-collapse">
+                        <div class="accordion-body">
+                            <ul class="mobile-dropdown">
+                                <li class="active"><a href="iu-mobile.html">IU Mobile User Feedback</a></li>
+                                <li><a href="building-a-mind.html">Building A Mind UI</a></li>
+                                <li><a href="resource-library.html">Career Resource Library</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed no-chevron" type="button">
+                            <a href="about.html">About</a>
+                        </button>
+                    </h2>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed no-chevron" type="button">
+                            <a href="https://docs.google.com/document/d/1sBDJxCaATtrbUm17hs5gfEtOosMb-hG7VTnGBGpMz1Y/edit?usp=sharing"
+                                target="_blank" rel="noopener noreferrer">Resume</a>
+                        </button>
+                    </h2>
+                </div>
+            </div>
+        </nav>
+
+        <div class="openbtn">
+            <span class="material-symbols-outlined menu-button">menu</span>
+        </div>
+        <div class="all-over-bkg"></div>
+    </div>
+
+    <div class="widescreen-only">
+        <nav class="widescreen-nav">
+            <ul>
+                <a href="index.html">
+                    <li>
+                        <span class="icon material-symbols-outlined logo">hive</span> <span class="brand-name sr-only"
+                            aria-hidden="true">Camilla Clark</span>
+                    </li>
+                </a>
+                <div class="nav-items">
+                    <div class="dropdown">
+                        <li class="dropbtn">Projects <i class="bi bi-chevron-down"></i></li>
+                        <div class="dropdown-content">
+                            <a href="iu-mobile.html" class="active">IU Mobile User Feedback</a>
+                            <a href="building-a-mind.html">Building A Mind UI</a>
+                            <a href="resource-library.html">Career Resource Library</a>
+                        </div>
+                    </div>
+                    <a class="hvr-float nav-float" href="about.html">
+                        <li>About</li>
+                    </a>
+                    <a class="hvr-float nav-float"
+                        href="https://docs.google.com/document/d/1sBDJxCaATtrbUm17hs5gfEtOosMb-hG7VTnGBGpMz1Y/edit?usp=sharing"
+                        target="_blank" rel="noopener noreferrer">
+                        <li>Resume</li>
+                    </a>
+                </div>
+            </ul>
+        </nav>
+    </div>
+
+    <header>
+        <div>
+            <h1>IU Mobile User Feedback</h1>
+            <span class="subhead">User Research and Data Analysis</span>
+        </div>
+
+        <p>Indiana University's mobile app serves over 100,000 users each semester, and it has a dedicated team that
+            continuously works to implement updates. However, this team does not have a direct line of contact to its
+            user base. To bridge this gap, I began a project to acquire user feedback, analyze it, and report my
+            findings to the design team.</p>
+
+        <h2 class="sr-only">Project Summary</h2>
+        <section class="project-summary">
+            <div>
+                <h3>Project At A Glance</h3>
+                <ul class="project-bullets">
+                    <li>Professional project</li>
+                    <li>November 2024 - Present</li>
+                    <li>Individual</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Roles &amp; Responsibilities</h3>
+                <ul class="project-bullets">
+                    <li><strong>User Research:</strong> Designing the form and recruiting users to provide feedback.
+                    </li>
+                    <li><strong>Data Analysis:</strong> Applying statistical techniques to discover findings in the
+                        feedback.</li>
+                    <li><strong>Synthesizing Results:</strong> Reporting major insights from the data and suggesting
+                        next steps.</li>
+                </ul>
+            </div>
+        </section>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <section class="feedback-form">
+            <div>
+                <h2>The Feedback Form</h2>
+                <p>The anonymous form, created in Google Forms, begins by asking some basic demographic and usage
+                    questions,
+                    such as:</p>
+                <ul class="project-bullets">
+                    <li>IU affiliation (student, faculty, or staff)</li>
+                    <li>Campus affiliation</li>
+                    <li>Devices on which IU Mobile is installed</li>
+                    <li>How often they use IU Mobile</li>
+                </ul>
+                <p>It then asks specific questions about the users' sentiments toward IU Mobile, such as:</p>
+                <ul class="project-bullets">
+                    <li>How would you rate your overall experience with IU Mobile on a scale from 1 to 5?</li>
+                    <li>What is your favorite thing about IU Mobile?</li>
+                    <li>What is your <strong>least</strong> favorite thing about IU Mobile?</li>
+                    <li>What is something you wish IU Mobile could do that it currently cannot do?</li>
+                </ul>
+
+                <p>The form was sent out on Facebook, Instagram, LinkedIn, Reddit, and text message.</p>
+            </div>
+            <img src="images/form-screenshot.png" alt="Screenshot of form">
+        </section>
+
+        <div class="results-wrapper">
+            <h2 class="results-header">The Results</h2>
+            <section class="results">
+
+                <div class="demographics">
+                    <p>In total, the form received 21 responses throughout November and December 2024. Most were from
+                        students, with two staff respondents.</p>
+                    <img src="images/iu-affiliation.png" alt="Bar graph of respondents' IU affiliation">
+                </div>
+
+                <div class="usage">
+                    <p>Over 85% of respondents used IU Mobile at least once per week, with over half using it daily or
+                        multiple
+                        times per day.</p>
+                    <img src="images/usage-frequency.png" alt="Bar graph of usage frequency">
+                </div>
+
+                <section class="rating">
+                    <h3>User Sentiments</h3>
+                    <p class="rating-info"><strong>3.1/5</strong> Average Rating</p>
+                    <p class="rating-info"><strong>0.8</strong> Standard Deviation</p>
+                </section>
+
+                <section class="sentiment-lists">
+                    <div>
+                        <p><strong>Likes</strong></p>
+                        <ul class="project-bullets project-bullets-narrow">
+                            <li>Bus Tracking</li>
+                            <li>Clock In/Out</li>
+                            <li>Convenience</li>
+                            <li>One.IU Links</li>
+                            <li>Crimson Card</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p><strong>Dislikes</strong></p>
+                        <ul class="project-bullets project-bullets-narrow">
+                            <li>Frequent Logins</li>
+                            <li>Loading Issues</li>
+                            <li>App Exits</li>
+                            <li>Search</li>
+                            <li>Unintuitive Interface</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p><strong>Desired Behavior</strong></p>
+                        <ul class="project-bullets project-bullets-narrow">
+                            <li>Expanded Map Functionality</li>
+                            <li>Canvas Integration</li>
+                            <li>Skip One.IU Login</li>
+                            <li>Display Nearby Events</li>
+                            <li>Class Registration</li>
+                        </ul>
+                    </div>
+                </section>
+            </section>
+        </div>
+
+        <h2>Next Steps</h2>
+        <p>After presenting my findings to my supervisors, Cody Thompson and Alan Milner, we are discussing ways to
+            solicit user feedback at a larger scale. This may include context-dependent feedback forms within IU Mobile,
+            for instance a form displaying on the search screen asking about the relevance of search results.</p>
+
+    </main>
+    <footer>
+        <h2>Let's get in touch!</h2>
+        <a class="hvr-float" href="mailto:camiclar@iu.edu">camiclar@iu.edu</a>
+        <a class="hvr-float" href="https://www.linkedin.com/in/camilla-clark/">LinkedIn</a>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script src="js/nav.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
