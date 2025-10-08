@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Camilla Clark</title>
+    <title>Resume - Camilla Clark</title>
 
     <!-- STYLESHEETS -->
     <link rel="stylesheet" href="css/normalize.css">
@@ -32,10 +32,7 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body id="about">
-    <!-- OPTIONAL VISUAL INDICATOR FOR BREAK POINTS -->
-    <!-- <div id="tag"></div> -->
-
+<body id="resume">
     <!-- NAVIGATION: Single responsive Bootstrap navbar -->
     <nav class="navbar navbar-expand-md navbar-light navbar-custom fixed-top">
         <div class="container-fluid">
@@ -58,32 +55,35 @@
                             <li><a class="dropdown-item" href="resource-library.html">Career Resource Library</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link hvr-float active" aria-current="page" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link hvr-float" href="resume.html">Resume</a></li>
+                    <li class="nav-item"><a class="nav-link hvr-float" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link hvr-float active" aria-current="page" href="resume.html">Resume</a></li>
                     <li class="nav-item"><a class="nav-link hvr-float" href="contact.html">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
+    <header>
+        <h1>Resume</h1>
+        <p>Download or view my resume below.</p>
+    </header>
+
     <!-- MAIN CONTENT -->
     <main>
-        <h1>Nice to meet you!</h1>
-        <div class="container">
-            <img class="headshot" src="images/headshot.jpg" alt="Headshot">
-            <div>
-                <p>I am a master's student at Indiana University studying Information Systems. After graduating in May 2026, 
-                    I plan to pursue a career in product design or product management. I
-                    have experience in User Experience Design, data analytics,
-                    artificial intelligence, and full-stack development.</p>
-                <p>Outside of school, I enjoy video games, yoga, and spending time with my two dogs Miley and Ladybug.</p>
-                <button class="button hvr-float"><a href="resume.html">
-                    View my resume
-                </a></button>
+        <div class="resume-container">
+            <iframe src="Clark_Camilla_Resume.pdf" width="100%" height="800px" type="application/pdf" style="min-width: 100%;">
+                <p>Your browser does not support PDFs. <a href="Clark_Camilla_Resume.pdf">Download the PDF</a> instead.</p>
+            </iframe>
+            <div class="resume-actions mt-3">
+                <button class="hvr-float button project-button">
+                    <a href="Clark_Camilla_Resume.pdf" download>
+                        <i class="bi bi-download"></i> Download PDF
+                    </a>
+                </button>
             </div>
         </div>
-
     </main>
+
     <footer>
         <h2>Let's get in touch!</h2>
         <a class="hvr-float" href="mailto:camiclar@iu.edu">camiclar@iu.edu</a>
