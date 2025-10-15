@@ -1,0 +1,189 @@
+{% extends "base.html" %}
+
+{% block title %}Contact - Camilla Clark{% endblock %}
+{% block body_id %}contact{% endblock %}
+
+{% block content %}
+<header>
+    <h1>Let's get in touch!</h1>
+    <p>I'm always interested in new opportunities and collaborations. Feel free to reach out through any of the channels below.</p>
+</header>
+
+<!-- MAIN CONTENT -->
+<main>
+    <div class="contact-container">
+        <div class="contact-methods">
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="bi bi-envelope-fill"></i>
+                </div>
+                <div class="contact-details">
+                    <h3>Email</h3>
+                    <a href="mailto:camiclar@iu.edu" class="contact-link">camiclar@iu.edu</a>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="bi bi-linkedin"></i>
+                </div>
+                <div class="contact-details">
+                    <h3>LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/camilla-clark/" target="_blank" rel="noopener noreferrer" class="contact-link">linkedin.com/in/camilla-clark</a>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="bi bi-github"></i>
+                </div>
+                <div class="contact-details">
+                    <h3>GitHub</h3>
+                    <a href="https://github.com/camiclar" target="_blank" rel="noopener noreferrer" class="contact-link">github.com/camiclar</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-container">
+            <h2>Send me a message</h2>
+            <form id="contactForm" action="{{ url_for('thank_you') }}" method="GET" novalidate>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="firstName" required minlength="2" 
+                               pattern="[A-Za-z\s]+" title="First name must contain only letters and spaces">
+                        <div class="error-message" id="firstNameError"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" name="lastName" required minlength="2" 
+                               pattern="[A-Za-z\s]+" title="Last name must contain only letters and spaces">
+                        <div class="error-message" id="lastNameError"></div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required 
+                           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+                           title="Please enter a valid email address">
+                    <div class="error-message" id="emailError"></div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="password">Password *</label>
+                        <input type="password" id="password" name="password" required minlength="8" 
+                               title="Password must be at least 8 characters long">
+                        <div class="error-message" id="passwordError"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password *</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required 
+                               title="Confirm password must match the password">
+                        <div class="error-message" id="confirmPasswordError"></div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="button hvr-float">Send Message</button>
+                    <button type="reset" class="button button-secondary hvr-float">Clear Form</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Clear previous errors
+        clearErrors();
+        
+        let isValid = true;
+        
+        // Validate first name
+        const firstName = document.getElementById('firstName');
+        if (!firstName.value.trim() || firstName.value.length < 2) {
+            showError('firstNameError', 'First name is required and must be at least 2 characters long.');
+            isValid = false;
+        } else if (!/^[A-Za-z\s]+$/.test(firstName.value)) {
+            showError('firstNameError', 'First name must contain only letters and spaces.');
+            isValid = false;
+        }
+        
+        // Validate last name
+        const lastName = document.getElementById('lastName');
+        if (!lastName.value.trim() || lastName.value.length < 2) {
+            showError('lastNameError', 'Last name is required and must be at least 2 characters long.');
+            isValid = false;
+        } else if (!/^[A-Za-z\s]+$/.test(lastName.value)) {
+            showError('lastNameError', 'Last name must contain only letters and spaces.');
+            isValid = false;
+        }
+        
+        // Validate email
+        const email = document.getElementById('email');
+        const emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i;
+        if (!email.value.trim()) {
+            showError('emailError', 'Email address is required.');
+            isValid = false;
+        } else if (!emailPattern.test(email.value)) {
+            showError('emailError', 'Please enter a valid email address.');
+            isValid = false;
+        }
+        
+        // Validate password
+        const password = document.getElementById('password');
+        if (!password.value || password.value.length < 8) {
+            showError('passwordError', 'Password is required and must be at least 8 characters long.');
+            isValid = false;
+        }
+        
+        // Validate confirm password
+        const confirmPassword = document.getElementById('confirmPassword');
+        if (!confirmPassword.value) {
+            showError('confirmPasswordError', 'Please confirm your password.');
+            isValid = false;
+        } else if (password.value !== confirmPassword.value) {
+            showError('confirmPasswordError', 'Passwords do not match.');
+            isValid = false;
+        }
+        
+        if (isValid) {
+            // Redirect to thank you page
+            window.location.href = '{{ url_for("thank_you") }}';
+        }
+    });
+    
+    function showError(elementId, message) {
+        const errorElement = document.getElementById(elementId);
+        errorElement.textContent = message;
+        errorElement.style.display = 'block';
+    }
+    
+    function clearErrors() {
+        const errorElements = document.querySelectorAll('.error-message');
+        errorElements.forEach(element => {
+            element.textContent = '';
+            element.style.display = 'none';
+        });
+    }
+    
+    // Clear errors on input
+    document.querySelectorAll('input').forEach(input => {
+        input.addEventListener('input', function() {
+            const errorId = this.id + 'Error';
+            const errorElement = document.getElementById(errorId);
+            if (errorElement) {
+                errorElement.textContent = '';
+                errorElement.style.display = 'none';
+            }
+        });
+    });
+</script>
+{% endblock %}

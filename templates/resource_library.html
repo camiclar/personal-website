@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}Career Resource Library - Camilla Clark{% endblock %}
+{% block body_id %}project{% endblock %}
+
+{% block content %}
+<header>
+    <div>
+        <h1>Career Resource Library</h1>
+        <span class="subhead">Data Migration and Front-End Design</span>
+    </div>
+
+    <p>IU's office of Career Exploration &amp; Student Employment hosts an online library of nearly 400 career
+        resources which is regularly updated to add new resources and remove old ones. All of these resources were
+        stored in a JSON file, however, making them difficult to edit, especially for those without technical
+        backgrounds. This prompted a data migration project moving these resources to Airtable and updating the
+        client-facing UI, creating a streamlined experience for both staff and students.</p>
+
+    <h2 class="visually-hidden">Project Summary</h2>
+    <section class="project-summary">
+        <div>
+            <h3>Project At A Glance</h3>
+            <ul class="project-bullets">
+                <li>Professional project</li>
+                <li>June 2020 - November 2021</li>
+                <li>Collaborators: Stacey Abshire, Dr. Clinton Roeth-McKay</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Roles &amp; Responsibilities</h3>
+            <ul class="project-bullets">
+                <li><strong>Data Migration:</strong> Coordinating the transfer of data from JSON to Airtable.
+                </li>
+                <li><strong>Data Analysis:</strong> Applying statistical techniques to discover findings in the
+                    feedback.</li>
+                <li><strong>Synthesizing Results:</strong> Reporting major insights from the data and suggesting
+                    next steps.</li>
+            </ul>
+        </div>
+    </section>
+    <button class="hvr-float button project-button"><a
+            href="https://careerexploration.indiana.edu/resource-library/index.html" target="_blank"
+            rel="noopener noreferrer">See the finished
+            product</a></button>
+</header>
+
+<!-- MAIN CONTENT -->
+<main>
+    <h2>The Problem</h2>
+    <p>The original resource library was difficult to maintain and update. All resources were stored in a JSON file, making it challenging for non-technical staff to add, edit, or remove resources. This created bottlenecks and limited the library's ability to stay current with new career resources.</p>
+    
+    <img src="{{ url_for('static', filename='images/old-resource-library.jpg') }}" alt="Screenshot of the old resource library interface showing the basic layout">
+    
+    <h2>Filtering Challenges</h2>
+    <p>The original system had limited filtering capabilities, making it difficult for students to find relevant resources. The interface lacked intuitive ways to narrow down the nearly 400 resources by category, type, or other criteria.</p>
+    
+    <img src="{{ url_for('static', filename='images/old-resource-library-filters.jpg') }}" alt="Screenshot showing the limited filtering options in the old resource library">
+    
+    <h2>The Solution</h2>
+    <p>We migrated the data to Airtable, which provided a user-friendly interface for staff to manage resources, and redesigned the front-end to include improved filtering and search capabilities. The new system streamlined both the management and user experience.</p>
+    
+    <img src="{{ url_for('static', filename='images/resource-library-preview.jpg') }}" alt="Preview of the new resource library interface with improved design and filtering">
+</main>
+{% endblock %}

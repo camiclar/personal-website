@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}About - Camilla Clark{% endblock %}
+{% block body_id %}about{% endblock %}
+
+{% block content %}
+<!-- MAIN CONTENT -->
+<main>
+    <h1>Nice to meet you!</h1>
+    <div class="container">
+        <img class="headshot" src="{{ url_for('static', filename='images/headshot.jpg') }}" alt="Headshot">
+        <div>
+            <p>I am a master's student at Indiana University studying Information Systems. After graduating in May 2026, 
+                I plan to pursue a career in product design or product management. I
+                have experience in User Experience Design, data analytics,
+                artificial intelligence, and full-stack development.</p>
+            <p>Outside of school, I enjoy video games, yoga, and spending time with my two dogs Miley and Ladybug.</p>
+            <button class="button hvr-float"><a href="{{ url_for('resume') }}">
+                View my resume
+            </a></button>
+        </div>
+    </div>
+</main>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Resume - Camilla Clark{% endblock %}
+{% block body_id %}resume{% endblock %}
+
+{% block content %}
+<header>
+    <h1>Resume</h1>
+    <p>Download or view my resume below.</p>
+</header>
+
+<!-- MAIN CONTENT -->
+<main>
+    <div class="resume-container">
+        <iframe src="{{ url_for('static', filename='Clark_Camilla_Resume.pdf') }}" width="100%" height="800px" type="application/pdf" style="min-width: 100%;">
+            <p>Your browser does not support PDFs. <a href="{{ url_for('static', filename='Clark_Camilla_Resume.pdf') }}">Download the PDF</a> instead.</p>
+        </iframe>
+        <div class="resume-actions mt-3">
+            <button class="hvr-float button project-button">
+                <a href="{{ url_for('static', filename='Clark_Camilla_Resume.pdf') }}" download>
+                    <i class="bi bi-download"></i> Download PDF
+                </a>
+            </button>
+        </div>
+    </div>
+</main>
+{% endblock %}

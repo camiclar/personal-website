@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Thank You - Camilla Clark{% endblock %}
+{% block body_id %}thankyou{% endblock %}
+
+{% block content %}
+<header>
+    <h1>Thank You!</h1>
+    <p>Your message has been received. I'll get back to you as soon as possible.</p>
+</header>
+
+<!-- MAIN CONTENT -->
+<main>
+    <div class="thankyou-container">
+        <div class="thankyou-message">
+            <div class="thankyou-icon">
+                <i class="bi bi-check-circle-fill"></i>
+            </div>
+            <h2>Message Sent Successfully</h2>
+            <p>Thank you for reaching out! I've received your message and will respond within 24-48 hours.</p>
+            <p>In the meantime, feel free to explore my portfolio or connect with me on social media.</p>
+        </div>
+
+        <div class="thankyou-actions">
+            <a href="{{ url_for('index') }}" class="button hvr-float">Back to Home</a>
+            <a href="{{ url_for('contact') }}" class="button button-secondary hvr-float">Send Another Message</a>
+        </div>
+    </div>
+</main>
+{% endblock %}

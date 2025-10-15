@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Building A Mind UI - Camilla Clark{% endblock %}
+{% block body_id %}project{% endblock %}
+
+{% block content %}
+<header>
+    <div>
+        <h1>Building A Mind User Interface</h1>
+        <span class="subhead">Computer Vision Research and Product Design</span>
+    </div>
+
+    <p>The Building A Mind lab runs cutting-edge research on the nature vs nurture debate using computer vision, and
+        it is opening up its research by making the project open-source. The software involved is complex, however,
+        and limited documentation is available. To ensure the research is accessible to as many people as possible,
+        I joined a team of other researchers to create a beginner-friendly interface and educational resource for
+        the models.</p>
+
+    <h2 class="visually-hidden">Project Summary</h2>
+    <section class="project-summary">
+        <div>
+            <h3>Project At A Glance</h3>
+            <ul class="project-bullets">
+                <li>Academic project</li>
+                <li>May 2024 - August 2024</li>
+                <li>Collaborators: Dr. Justin Wood, Dr. Samantha Wood, Lalit Pandey</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Roles &amp; Responsibilities</h3>
+            <ul class="project-bullets">
+                <li><strong>Computer Vision Research:</strong> Auditing the machine learning pipeline and planning
+                    the implementation of deep reinforcement learning.
+                </li>
+                <li><strong>Documentation:</strong> Discovering pain points in the installation process and updating
+                    documentation.</li>
+                <li><strong>UX Design:</strong> Creating a web interface for documentation, research papers, and
+                    educational resources.</li>
+            </ul>
+        </div>
+
+    </section>
+    <button class="hvr-float button project-button"><a href="https://building-a-mind.vercel.app/" target="_blank"
+            rel="noopener noreferrer">See the finished
+            product</a></button>
+</header>
+
+<!-- MAIN CONTENT -->
+<main>
+    <h2>The Interface</h2>
+    <p>The web interface provides an accessible way for users to explore the Building A Mind research and documentation. It features a clean, modern design that makes complex computer vision concepts approachable for beginners.</p>
+    
+    <img src="{{ url_for('static', filename='images/phase1-home.jpg') }}" alt="Building A Mind interface homepage showing the main navigation and content areas">
+    
+    <h2>Project Overview</h2>
+    <p>This project involved creating a comprehensive web interface that serves as both an educational resource and a gateway to the Building A Mind research. The interface includes documentation, research papers, and interactive elements to help users understand the computer vision models.</p>
+    
+    <img src="{{ url_for('static', filename='images/bam-preview.jpg') }}" alt="Building A Mind project preview showing the interface design and layout">
+</main>
+{% endblock %}

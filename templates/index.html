@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Camilla Clark{% endblock %}
+{% block body_id %}home{% endblock %}
+
+{% block content %}
+<header class="d-flex flex-column align-items-center">
+    <div class="text-start">
+        <h1>Hello, World!<br />I'm Camilla.</h1>
+        <ul>
+            <li>MS of Information Systems, Kelley School of Business</li>
+            <li>Data-Driven UX Designer</li>
+            <li>Seeking a Career in Product Design &amp; Product Management</li>
+        </ul>
+    </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<main>
+    <h2>Latest Projects</h2>
+    <section class="project-preview hvr-float">
+        <img src="{{ url_for('static', filename='images/iu-mobile-sentiments.jpg') }}" alt="User sentiments">
+        <div>
+            <h3>IU Mobile User Feedback</h3>
+            <span class="project-role">User Research and Data Analysis</span>
+            <p>Collecting feedback and discovering insights to direct focus for future updates.</p>
+            <button class="button hvr-float"><a href="{{ url_for('iu_mobile') }}">View the Case Study</a></button>
+        </div>
+    </section>
+
+    <section class="project-preview hvr-float">
+        <img src="{{ url_for('static', filename='images/bam-preview.jpg') }}" alt="Building a mind homepage">
+        <div>
+            <h3>Building A Mind UI</h3>
+            <span class="project-role">Computer Vision Research and Product Design</span>
+            <p>Designing a user interface for a computer vision AI model and creating beginner-friendly
+                documentation.</p>
+            <button class="button hvr-float"><a href="{{ url_for('building_a_mind') }}">View the Case Study</a></button>
+        </div>
+    </section>
+
+    <section class="project-preview hvr-float">
+        <img src="{{ url_for('static', filename='images/resource-library-preview.jpg') }}" alt="Resource library">
+        <div>
+            <h3>Career Resource Library</h3>
+            <span class="project-role">Data Migration and Front-End Design</span>
+            <p>Migrating nearly 400 career resources and adding additional filter functionality to improve user
+                experience and future-proof the library.</p>
+            <button class="button hvr-float"><a href="{{ url_for('resource_library') }}">View the Case Study</a></button>
+        </div>
+    </section>
+</main>
+{% endblock %}

@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+
+{% block title %}IU Mobile User Feedback - Camilla Clark{% endblock %}
+{% block body_id %}project{% endblock %}
+
+{% block content %}
+<header>
+    <div>
+        <h1>IU Mobile User Feedback</h1>
+        <span class="subhead">User Research and Data Analysis</span>
+    </div>
+
+    <p>Indiana University's mobile app serves over 100,000 users each semester, and it has a dedicated team that
+        continuously works to implement updates. However, this team does not have a direct line of contact to its
+        user base. To bridge this gap, I began a project to acquire user feedback, analyze it, and report my
+        findings to the design team.</p>
+
+    <h2 class="visually-hidden">Project Summary</h2>
+    <section class="project-summary">
+        <div>
+            <h3>Project At A Glance</h3>
+            <ul class="project-bullets">
+                <li>Professional project</li>
+                <li>November 2024 - Present</li>
+                <li>Individual</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Roles &amp; Responsibilities</h3>
+            <ul class="project-bullets">
+                <li><strong>User Research:</strong> Designing the form and recruiting users to provide feedback.
+                </li>
+                <li><strong>Data Analysis:</strong> Applying statistical techniques to discover findings in the
+                    feedback.</li>
+                <li><strong>Synthesizing Results:</strong> Reporting major insights from the data and suggesting
+                    next steps.</li>
+            </ul>
+        </div>
+    </section>
+</header>
+
+<!-- MAIN CONTENT -->
+<main>
+    <section class="feedback-form">
+        <div>
+            <h2>The Feedback Form</h2>
+            <p>The anonymous form, created in Google Forms, begins by asking some basic demographic and usage
+                questions,
+                such as:</p>
+            <ul class="project-bullets">
+                <li>IU affiliation (student, faculty, or staff)</li>
+                <li>Campus affiliation</li>
+                <li>Devices on which IU Mobile is installed</li>
+                <li>How often they use IU Mobile</li>
+            </ul>
+            <p>It then asks specific questions about the users' sentiments toward IU Mobile, such as:</p>
+            <ul class="project-bullets">
+                <li>How would you rate your overall experience with IU Mobile on a scale from 1 to 5?</li>
+                <li>What is your favorite thing about IU Mobile?</li>
+                <li>What is your <strong>least</strong> favorite thing about IU Mobile?</li>
+                <li>What is something you wish IU Mobile could do that it currently cannot do?</li>
+            </ul>
+
+            <p>The form was sent out on Facebook, Instagram, LinkedIn, Reddit, and text message.</p>
+        </div>
+        <img src="{{ url_for('static', filename='images/form-screenshot.png') }}" alt="Screenshot of form">
+    </section>
+
+    <div class="results-wrapper">
+        <h2 class="results-header">The Results</h2>
+        <section class="results">
+
+            <div class="demographics">
+                <p>In total, the form received 21 responses throughout November and December 2024. Most were from
+                    students, with two staff respondents.</p>
+                <img src="{{ url_for('static', filename='images/iu-affiliation.png') }}" alt="Bar graph of respondents' IU affiliation">
+            </div>
+
+            <div class="usage">
+                <p>Over 85% of respondents used IU Mobile at least once per week, with over half using it daily or
+                    multiple
+                    times per day.</p>
+                <img src="{{ url_for('static', filename='images/usage-frequency.png') }}" alt="Bar graph of usage frequency">
+            </div>
+
+            <section class="rating">
+                <h3>User Sentiments</h3>
+                <p class="rating-info"><strong>3.1/5</strong> Average Rating</p>
+                <p class="rating-info"><strong>0.8</strong> Standard Deviation</p>
+            </section>
+
+            <section class="sentiment-lists">
+                <div>
+                    <p><strong>Likes</strong></p>
+                    <ul class="project-bullets project-bullets-narrow">
+                        <li>Bus Tracking</li>
+                        <li>Clock In/Out</li>
+                        <li>Convenience</li>
+                        <li>One.IU Links</li>
+                        <li>Crimson Card</li>
+                    </ul>
+                </div>
+                <div>
+                    <p><strong>Dislikes</strong></p>
+                    <ul class="project-bullets project-bullets-narrow">
+                        <li>Frequent Logins</li>
+                        <li>Loading Issues</li>
+                        <li>App Exits</li>
+                        <li>Search</li>
+                        <li>Unintuitive Interface</li>
+                    </ul>
+                </div>
+                <div>
+                    <p><strong>Desired Behavior</strong></p>
+                    <ul class="project-bullets project-bullets-narrow">
+                        <li>Expanded Map Functionality</li>
+                        <li>Canvas Integration</li>
+                        <li>Skip One.IU Login</li>
+                        <li>Display Nearby Events</li>
+                        <li>Class Registration</li>
+                    </ul>
+                </div>
+            </section>
+        </section>
+    </div>
+
+    <h2>Next Steps</h2>
+    <p>After presenting my findings to my supervisors, Cody Thompson and Alan Milner, we are discussing ways to
+        solicit user feedback at a larger scale. This may include context-dependent feedback forms within IU Mobile,
+        for instance a form displaying on the search screen asking about the relevance of search results.</p>
+</main>
+{% endblock %}
