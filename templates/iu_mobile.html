@@ -1,19 +1,15 @@
 {% extends "base.html" %}
 
-{% block title %}IU Mobile User Feedback - Camilla Clark{% endblock %}
+{% block title %}{{ project.title }} - Camilla Clark{% endblock %}
 {% block body_id %}project{% endblock %}
 
 {% block content %}
 <header>
     <div>
-        <h1>IU Mobile User Feedback</h1>
+        <h1>{{ project.title }}</h1>
         <span class="subhead">User Research and Data Analysis</span>
+        <p>{{ project.description }}</p>
     </div>
-
-    <p>Indiana University's mobile app serves over 100,000 users each semester, and it has a dedicated team that
-        continuously works to implement updates. However, this team does not have a direct line of contact to its
-        user base. To bridge this gap, I began a project to acquire user feedback, analyze it, and report my
-        findings to the design team.</p>
 
     <h2 class="visually-hidden">Project Summary</h2>
     <section class="project-summary">

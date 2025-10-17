@@ -1,20 +1,17 @@
 {% extends "base.html" %}
 
-{% block title %}Career Resource Library - Camilla Clark{% endblock %}
+{% block title %}{{ project.title }} - Camilla Clark{% endblock %}
 {% block body_id %}project{% endblock %}
 
 {% block content %}
 <header>
     <div>
-        <h1>Career Resource Library</h1>
+        <h1>{{ project.title }}</h1>
         <span class="subhead">Data Migration and Front-End Design</span>
+        <p>{{ project.description }}</p>
     </div>
 
-    <p>IU's office of Career Exploration &amp; Student Employment hosts an online library of nearly 400 career
-        resources which is regularly updated to add new resources and remove old ones. All of these resources were
-        stored in a JSON file, however, making them difficult to edit, especially for those without technical
-        backgrounds. This prompted a data migration project moving these resources to Airtable and updating the
-        client-facing UI, creating a streamlined experience for both staff and students.</p>
+    
 
     <h2 class="visually-hidden">Project Summary</h2>
     <section class="project-summary">

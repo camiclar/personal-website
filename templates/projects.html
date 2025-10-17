@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}All Projects - Camilla Clark{% endblock %}
+{% block body_id %}project{% endblock %}
+
+{% block content %}
+<header>
+	<h1>All Projects</h1>
+</header>
+
+<main>
+    <table class="table table-striped align-middle">
+		<thead>
+			<tr>
+				<th scope="col">Image</th>
+				<th scope="col">Title</th>
+				<th scope="col">Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for p in projects %}
+            {% set href = url_for('iu_mobile') if p.slug == 'iu-mobile' else (url_for('building_a_mind') if p.slug == 'building-a-mind' else (url_for('resource_library') if p.slug == 'resource-library' else '#')) %}
+            <tr style="cursor: pointer;" onclick="window.location='{{ href }}'">
+				<td style="width:200px">
+					<a href="{{ url_for('static', filename='images/' ~ p.image_file_name) }}" target="_blank" rel="noopener noreferrer">
+						<img src="{{ url_for('static', filename='images/' ~ p.image_file_name) }}" alt="{{ p.title }} image" style="max-width: 180px; height: auto;" />
+					</a>
+				</td>
+                <td><strong><a href="{{ href }}">{{ p.title }}</a></strong></td>
+				<td>{{ p.description }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</main>
+{% endblock %}

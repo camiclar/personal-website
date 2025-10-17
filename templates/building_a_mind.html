@@ -1,20 +1,15 @@
 {% extends "base.html" %}
 
-{% block title %}Building A Mind UI - Camilla Clark{% endblock %}
+{% block title %}{{ project.title }} - Camilla Clark{% endblock %}
 {% block body_id %}project{% endblock %}
 
 {% block content %}
 <header>
     <div>
-        <h1>Building A Mind User Interface</h1>
+        <h1>{{ project.title }}</h1>
         <span class="subhead">Computer Vision Research and Product Design</span>
+        <p>{{ project.description }}</p>
     </div>
-
-    <p>The Building A Mind lab runs cutting-edge research on the nature vs nurture debate using computer vision, and
-        it is opening up its research by making the project open-source. The software involved is complex, however,
-        and limited documentation is available. To ensure the research is accessible to as many people as possible,
-        I joined a team of other researchers to create a beginner-friendly interface and educational resource for
-        the models.</p>
 
     <h2 class="visually-hidden">Project Summary</h2>
     <section class="project-summary">
