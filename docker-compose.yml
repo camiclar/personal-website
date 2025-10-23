@@ -1,0 +1,16 @@
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      # Mount the current directory for development (hot reload)
+      - .:/app
+      # Persist the SQLite database
+      - ./projects.db:/app/projects.db
+      # Persist uploaded images
+      - ./static/images:/app/static/images
+    environment:
+      - FLASK_ENV=development
+      - FLASK_DEBUG=1
+    restart: unless-stopped
